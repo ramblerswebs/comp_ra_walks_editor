@@ -1,1 +1,3 @@
-# comp_ra_walks_editor
+# RA Walks Editor
+Version for Joomla 5
+

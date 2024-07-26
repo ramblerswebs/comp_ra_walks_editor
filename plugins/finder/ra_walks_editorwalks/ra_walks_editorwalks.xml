@@ -7,7 +7,7 @@
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>ruby.tuesday@ramblers-webs.org.uk</authorEmail>
     <authorUrl>http://ramblers-webs.org.uk</authorUrl>
-    <version>CVS: 1.0.0</version>
+    <version>1.0.0</version>
     <description>PLG_FINDER_COM_RA_WALKS_EDITOR_XML_DESCRIPTION</description>
     <files>
         <filename plugin="ra_walks_editorwalks">ra_walks_editorwalks.php</filename>
@@ -21,6 +21,6 @@
     <config>
     </config>
     <updateservers>
-        <server type="extension" priority="1" name="com_ra_walks_editor">https://www.component-creator.com/index.php?task=builder.preupdatecheckhook&amp;option=com_combuilder&amp;component=Njk1ODQtMTkzODk0</server>
+        <server type="extension" name="Ramblers Walks Editor" priority="1">https://raw.githubusercontent.com/ramblerswebs/updates/master/updates/ra-walks-editor-component.xml</server>
     </updateservers>
 </extension>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="finder">
+    <name>plg_finder_ra_walks_editorcontacts</name>
+    <author>Chris Vaughan </author>
+    <creationDate>2024-02-14</creationDate>
+    <copyright>2024 ruby.tuesday@ramblers-webs.org.uk</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>ruby.tuesday@ramblers-webs.org.uk</authorEmail>
+    <authorUrl>http://ramblers-webs.org.uk</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>PLG_FINDER_COM_RA_WALKS_EDITOR_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="ra_walks_editorcontacts">ra_walks_editorcontacts.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages folder="languages">
+        
+			<language tag="en-GB">en-GB/plg_finder_ra_walks_editorcontacts.ini</language>
+			<language tag="en-GB">en-GB/plg_finder_ra_walks_editorcontacts.sys.ini</language>
+    </languages>
+    <config>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="com_ra_walks_editor">https://www.component-creator.com/index.php?task=builder.preupdatecheckhook&amp;option=com_combuilder&amp;component=Njk1ODQtMTkzODk0</server>
+    </updateservers>
+</extension>

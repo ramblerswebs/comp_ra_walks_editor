@@ -1,0 +1,57 @@
+.icon-48-walks {
+      background-image: url(../images/l_walks.png);
+      padding-left:60px!important;
+}
+
+.icon-48-walk {
+      background-image: url(../images/l_walks.png);
+      padding-left:60px!important;
+}
+
+.color-box-walks { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-places {
+      background-image: url(../images/l_places.png);
+      padding-left:60px!important;
+}
+
+.icon-48-place {
+      background-image: url(../images/l_places.png);
+      padding-left:60px!important;
+}
+
+.color-box-places { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-contacts {
+      background-image: url(../images/l_contacts.png);
+      padding-left:60px!important;
+}
+
+.icon-48-contact {
+      background-image: url(../images/l_contacts.png);
+      padding-left:60px!important;
+}
+
+.color-box-contacts { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-grades {
+      background-image: url(../images/l_grades.png);
+      padding-left:60px!important;
+}
+
+.icon-48-grade {
+      background-image: url(../images/l_grades.png);
+      padding-left:60px!important;
+}
+
+.color-box-grades { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+
+
+.other-filters{
+    padding: 0 14px;
+}

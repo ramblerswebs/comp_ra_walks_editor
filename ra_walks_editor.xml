@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="4.0" method="upgrade">
+    <name>com_ra_walks_editor</name>
+    <creationDate>2024-02-14</creationDate>
+    <copyright>2024 ruby.tuesday@ramblers-webs.org.uk</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Chris Vaughan </author>
+    <authorEmail>ruby.tuesday@ramblers-webs.org.uk</authorEmail>
+    <authorUrl>http://ramblers-webs.org.uk</authorUrl>
+    <version>1.0.0</version>
+    <description>COM_RA_WALKS_EDITOR_XML_DESCRIPTION</description>
+    <namespace path="src">Ramblers\Component\Ra_walks_editor</namespace>
+    
+    <scriptfile>script.php</scriptfile>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <schemas>
+            <schemapath type="mysql">sql/updates</schemapath>
+        </schemas>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    
+
+    <files folder="site">
+        <folder>src</folder>
+        <folder>forms</folder>
+        <folder>tmpl</folder>
+    </files>
+    <media destination="com_ra_walks_editor" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+        <filename>joomla.asset.json</filename>
+    </media>
+    <languages folder="site/languages">
+        
+        <language tag="en-GB">en-GB/com_ra_walks_editor.ini</language>
+    </languages>
+    <administration>
+        <menu>COM_RA_WALKS_EDITOR</menu>
+        <submenu>
+            
+            <menu link="option=com_ra_walks_editor&amp;view=walks" view="walks" alt="Ra_walks_editor/Walks">COM_RA_WALKS_EDITOR_TITLE_WALKS</menu>
+
+            <menu link="option=com_categories&amp;extension=com_ra_walks_editor.walks" view="categories" alt="Ra_walks_editor/Categories">COM_RA_WALKS_EDITOR_WALKS_CATEGORY</menu>
+
+            <menu link="option=com_ra_walks_editor&amp;view=places" view="places" alt="Ra_walks_editor/Places">COM_RA_WALKS_EDITOR_TITLE_PLACES</menu>
+
+            <menu link="option=com_ra_walks_editor&amp;view=contacts" view="contacts" alt="Ra_walks_editor/Contacts">COM_RA_WALKS_EDITOR_TITLE_CONTACTS</menu>
+
+            <menu link="option=com_ra_walks_editor&amp;view=grades" view="grades" alt="Ra_walks_editor/Grades">COM_RA_WALKS_EDITOR_TITLE_GRADES</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <folder>assets</folder>
+            <folder>forms</folder>
+            <folder>src</folder>
+            <folder>tmpl</folder>
+            <folder>services</folder>
+            <folder>presets</folder>
+            <folder>sql</folder>
+        </files>
+        <languages folder="administrator/languages">
+            
+            <language tag="en-GB">en-GB/com_ra_walks_editor.ini</language>
+            <language tag="en-GB">en-GB/com_ra_walks_editor.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="finder" plugin="ra_walks_editorwalks"/>
+        <plugin group="finder" plugin="ra_walks_editorplaces"/>
+        <plugin group="finder" plugin="ra_walks_editorcontacts"/>
+        <plugin group="finder" plugin="ra_walks_editorgrades"/>
+    </plugins>
+    
+
+    <updateservers>
+        <server type="extension" name="Ramblers Walks Editor" priority="1">https://raw.githubusercontent.com/ramblerswebs/updates/master/updates/ra-walks-editor-component.xml</server>
+    </updateservers>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

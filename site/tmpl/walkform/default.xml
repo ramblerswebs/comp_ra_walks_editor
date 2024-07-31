@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_RA_WALKS_EDITOR_TITLE_FORM_VIEW_WALK" option="View">
+        <message>
+                        <![CDATA[COM_RA_WALKS_EDITOR_TITLE_FORM_VIEW_WALK_DESC]]>
+        </message>
+    </layout>
+    <fields name="params">
+        <fieldset 
+            name="basic"
+            label="COM_RA_WALKS_EDITOR_FIELDSET_ITEM_ID_SELECT_LABEL">
+            <field
+                name="item_id"
+                query="SELECT 0 as `id` UNION SELECT `id` FROM #__ra_walks_editor_walks ORDER BY `id`"
+                type="sql"
+                key_field="id" 
+                value_field="id"
+                label="COM_RA_WALKS_EDITOR_ITEM_ID_SELECT_LABEL_FORM"
+                require="true"
+                description="JGLOBAL_SHOW_TITLE_DESC">
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

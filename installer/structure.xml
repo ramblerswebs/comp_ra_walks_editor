@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<component>
+  <table action="change" old_name="#__ra_walkseditor_walks" new_name="#__ra_walks_editor_walks" table_name="#__ra_walks_editor_walks" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field action="add" field_name="date" field_type="DATETIME" description="Date of the Walk or Event"/>
+    <field action="add" field_name="id" field_type="INT" field_length="11" is_autoincrement="1" description=""/>
+    <field action="add" field_name="category" field_type="TEXT" description=""/>
+    <field action="add" field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="change" field_name="content" field_type="MEDIUMTEXT" description="The details of the walk or event in JSON format"/>
+    <field action="add" field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field action="add" field_name="status" field_type="VARCHAR" field_length="255" description="Status of the walks or event"/>
+    <field action="add" field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field action="add" field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="asset_id" field_type="int" field_length="11"/>
+  </table>
+  <table action="change" old_name="#__ra_walkseditor_places" new_name="#__ra_walks_editor_places" table_name="#__ra_walks_editor_places" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field action="add" field_name="name" field_type="VARCHAR" field_length="255" description="The name of the location/place"/>
+    <field action="add" field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field action="add" field_name="abbr" field_type="VARCHAR" field_length="255" description="Optional abbreviation of the place name, useful for commonly used meeting places"/>
+    <field action="add" field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="postcode" field_type="VARCHAR" field_length="255" description="Post Code of the place"/>
+    <field action="add" field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field action="add" field_name="latitude" field_type="DOUBLE" description="Latitude of the place"/>
+    <field action="add" field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="longitude" field_type="DOUBLE" description="Longitude of the place"/>
+    <field action="add" field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field action="add" field_name="gridreference" field_type="VARCHAR" field_length="255" description="OS Grid reference of the place"/>
+    <field action="add" field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="change" old_name="content" new_name="what3words" field_name="what3words" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+  </table>
+  <table action="change" old_name="#__ra_walkseditor_contacts" new_name="#__ra_walks_editor_contacts" table_name="#__ra_walks_editor_contacts" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field action="change" old_name="firstname" new_name="contactname" field_name="contactname" field_type="VARCHAR" field_length="255" description="Name of contact"/>
+    <field action="add" field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field action="add" field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="displayname" field_type="VARCHAR" field_length="255" description="The name of the contact that will be made public"/>
+    <field action="add" field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field action="add" field_name="email" field_type="VARCHAR" field_length="255" description="Email address of contact"/>
+    <field action="add" field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="telephone1" field_type="VARCHAR" field_length="255" description="Main telephone number of contact"/>
+    <field action="add" field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field action="add" field_name="telephone2" field_type="VARCHAR" field_length="255" description="Second telephone number of contact"/>
+    <field action="add" field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="asset_id" field_type="int" field_length="11"/>
+  </table>
+  <table action="change" old_name="#__ra_walkseditor_grades" new_name="#__ra_walks_editor_grades" table_name="#__ra_walks_editor_grades" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="localgrade" field_type="VARCHAR" field_length="255" description=""/>
+    <field field_name="description" field_type="TEXT" description="Description of local grade"/>
+  </table>
+</component>

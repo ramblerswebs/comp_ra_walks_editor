@@ -1,0 +1,12 @@
+/**
+ * @version     CVS: 1.0.0
+ * @package     com_ra_walks_editor
+ * @copyright   2024 ruby.tuesday@ramblers-webs.org.uk
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @author      Chris Vaughan  <ruby.tuesday@ramblers-webs.org.uk>
+ */
+table.contactList {
+    color:red;
+    width:auto;
+    min-width:300px;
+}

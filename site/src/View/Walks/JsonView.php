@@ -19,6 +19,7 @@ class JsonView extends BaseJsonView {
             $groupname = $params->get('groupname');
             // Get a db connection.
             $db = \JFactory::getDbo();
+            $yesterday = date("Y-m-d", strtotime("yesterday"));
 
             // Create a new query object.
             $query = $db->getQuery(true);
@@ -32,11 +33,12 @@ class JsonView extends BaseJsonView {
             $db->setQuery($query);
             $results = $db->loadObjectList();
             $walks = [];
-            $today = date("Y-m-d");
-
+           
             foreach ($results as $result) {
-                $walk = json_decode($result->content);
-                if ($today < $result->date) {
+                
+                $datestring = \substr($result->date, 0, 10);
+                if ($datestring > $yesterday) {
+                    $walk = json_decode($result->content);
                     if (!property_exists($walk, 'admin')) {
                         $walk->admin = new \stdClass();
                     }

@@ -35,11 +35,12 @@ class JsonView extends BaseJsonView {
             $walks = [];
 
             foreach ($results as $result) {
-                $datestring = \substr($result->date, 0, 10);
-                if ($datestring > $yesterday) {
-                    $walk = json_decode($result->content);
-                    if ($walk !== null) {
-                        $this->setID($walk, $result->id);
+                $walk = json_decode($result->content);
+                if ($walk !== null) {
+                    $this->setID($walk, $result->id);
+                    $datestring = $walk->basics->date;
+                    // $datestring = \substr($result->date, 0, 10);
+                    if ($datestring > $yesterday) {
                         $walks[] = $walk;
                     } else {
                         // Error unable to decode Json walk

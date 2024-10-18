@@ -19,6 +19,7 @@ class JsonView extends BaseJsonView {
             $groupname = $params->get('groupname');
             // Get a db connection.
             $db = \JFactory::getDbo();
+            $yesterday = date("Y-m-d", strtotime("yesterday"));
 
             // Create a new query object.
             $query = $db->getQuery(true);
@@ -32,57 +33,23 @@ class JsonView extends BaseJsonView {
             $db->setQuery($query);
             $results = $db->loadObjectList();
             $walks = [];
-            $today = date("Y-m-d");
 
             foreach ($results as $result) {
                 $walk = json_decode($result->content);
-                if ($today < $result->date) {
-                    if (!property_exists($walk, 'admin')) {
-                        $walk->admin = new \stdClass();
+                if ($walk !== null) {
+                    $this->setID($walk, $result->id);
+                    $datestring = $walk->basics->date;
+                    // $datestring = \substr($result->date, 0, 10);
+                    if ($datestring > $yesterday) {
+                        $walks[] = $walk;
+                    } else {
+                        // Error unable to decode Json walk
                     }
-                    if (!property_exists($walk->admin, 'id')) {
-                        $walk->admin->id = $result->id;
-                    }
-                    $walks[] = $walk;
                 }
             }
 
-            //     function cmp($a, $b) {
-            //         return strcmp($a->basics->date, $b->basics->date);
-            //     }
-            //    usort($walks, "cmp");
             foreach ($walks as $walk) {
-
-
-                if (!property_exists($walk->basics, 'notes')) {
-                    $walk->basics->notes = '';
-                }
-                foreach ($walk->walks as $singleWalk) {
-                    if (!property_exists($singleWalk, 'gradeLocal')) {
-                        $singleWalk->gradeLocal = '';
-                    }
-                    if (!property_exists($singleWalk, 'pace')) {
-                        $singleWalk->pace = '';
-                    }
-                    if (!property_exists($singleWalk, 'ascentMetres')) {
-                        $singleWalk->ascentMetres = 0;
-                    }
-                    if (!property_exists($singleWalk, 'gradeLocal')) {
-                        $singleWalk->gradeLocal = '';
-                    }
-                }
-                if (!property_exists($walk->contact, 'email')) {
-                    $walk->contact->email = '';
-                }
-                if (!property_exists($walk->contact, 'telephone1')) {
-                    $walk->contact->telephone1 = '';
-                }
-                if (!property_exists($walk->contact, 'telephone2')) {
-                    $walk->contact->telephone2 = '';
-                }
-                if (property_exists($walk, 'notes')) {
-                    unset($walk->notes);
-                }
+                $this->checkWalk($walk);
             }
             $response = new \stdClass();
             $response->version = '1.0';
@@ -93,5 +60,48 @@ class JsonView extends BaseJsonView {
         } catch (Exception $e) {
             echo new JsonResponse($e);
         }
+    }
+
+    private function setID($walk, $id) {
+        if (!property_exists($walk, 'admin')) {
+            $walk->admin = new \stdClass();
+        }
+        if (!property_exists($walk->admin, 'id')) {
+            $walk->admin->id = $id;
+        }
+        return $walk;
+    }
+
+    private function checkWalk($walk) {
+        if (!property_exists($walk->basics, 'notes')) {
+            $walk->basics->notes = '';
+        }
+        foreach ($walk->walks as $singleWalk) {
+            if (!property_exists($singleWalk, 'gradeLocal')) {
+                $singleWalk->gradeLocal = '';
+            }
+            if (!property_exists($singleWalk, 'pace')) {
+                $singleWalk->pace = '';
+            }
+            if (!property_exists($singleWalk, 'ascentMetres')) {
+                $singleWalk->ascentMetres = 0;
+            }
+            if (!property_exists($singleWalk, 'gradeLocal')) {
+                $singleWalk->gradeLocal = '';
+            }
+        }
+        if (!property_exists($walk->contact, 'email')) {
+            $walk->contact->email = '';
+        }
+        if (!property_exists($walk->contact, 'telephone1')) {
+            $walk->contact->telephone1 = '';
+        }
+        if (!property_exists($walk->contact, 'telephone2')) {
+            $walk->contact->telephone2 = '';
+        }
+        if (property_exists($walk, 'notes')) {
+            unset($walk->notes);
+        }
+        return $walk;
     }
 }

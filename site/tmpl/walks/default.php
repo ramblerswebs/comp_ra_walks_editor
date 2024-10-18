@@ -83,4 +83,3 @@ foreach ($this->items as $item) {
 $loader = new Ramblers\Component\Ra_walks_editor\Site\Loader();
 $loader->fields['content'] = 'js-contents';
 $loader->viewWalks($data);
-

@@ -12,10 +12,10 @@
     <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
     <field name="created_by" type="createdby" default="0" label="JGLOBAL_FIELD_CREATED_BY_LABEL" description="JGLOBAL_FIELD_CREATED_BY_DESC" hidden="true" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_CREATED_BY"/>
     <field name="modified_by" type="modifiedby" default="0" label="JGLOBAL_FIELD_MODIFIED_BY_LABEL" description="JGLOBAL_FIELD_MODIFIED_BY_DESC" hidden="true" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_MODIFIED_BY"/>
-    <field name="date" class="inputbox" format="%Y-%m-%d" timeformat="12" filter="server_utc" maxyear="3" translateformat="false" showtime="false" singleheader="true" todaybutton="false" weeknumbers="false" filltable="true" type="calendar" label="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_DATE" description="COM_RA_WALKS_EDITOR_FORM_DESC_WALK_DATE" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_DATE"/>
+    <field name="date" class="inputbox" format="%Y-%m-%d" timeformat="12" filter="none" maxyear="3" translateformat="false" showtime="false" singleheader="true" todaybutton="false" weeknumbers="false" filltable="true" type="calendar" label="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_DATE" description="COM_RA_WALKS_EDITOR_FORM_DESC_WALK_DATE" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_DATE"/>
     <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
     <field name="category" extension="com_ra_walks_editor.walks" type="category" label="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_CATEGORY" description="COM_RA_WALKS_EDITOR_FORM_DESC_WALK_CATEGORY" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_CATEGORY"/>
-    <field name="content" type="editor" buttons="true" class="inputbox" filter="safehtml" label="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_CONTENT" description="COM_RA_WALKS_EDITOR_FORM_DESC_WALK_CONTENT" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_CONTENT"/>
+    <field name="content" type="text" buttons="true" class="inputbox" filter="raw" label="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_CONTENT" description="COM_RA_WALKS_EDITOR_FORM_DESC_WALK_CONTENT" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_CONTENT"/>
     <field name="status" default="Draft" type="list" required="true" label="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_STATUS" description="COM_RA_WALKS_EDITOR_FORM_DESC_WALK_STATUS" hint="COM_RA_WALKS_EDITOR_FORM_LBL_WALK_STATUS">
       <option value="Draft">COM_RA_WALKS_EDITOR_WALKS_STATUS_OPTION_DRAFT</option>
       <option value="AwaitingApproval">COM_RA_WALKS_EDITOR_WALKS_STATUS_OPTION_AWAITINGAPPROVAL</option>
